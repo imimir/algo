@@ -1,13 +1,10 @@
 def gcd(a, b):
     assert a >=0 and b >= 0
 
-    if a == 0:
-        return b
-    elif b == 0:
-        return a
+    if a == 0 or b == 0:
+        return max(a, b) 
 
-    return gcd(a % b, b) if a > b else gcd(b % a, a)
-
+    return gcd(b % a, a)
 
 a = int(input())
 b = int(input())
